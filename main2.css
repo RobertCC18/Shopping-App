@@ -1,0 +1,1205 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+	/* ロード時はファイナンスプランボタン、入力フォーム、結果を非表示 */
+
+	#financebutton	{
+		margin:0px;
+		padding:0px;
+		width:580px;
+	}
+	
+	dl#financebutton dt	{
+		clear:left;
+		float:left;
+		margin:0px;
+		padding-bottom:24px;
+		width:292px;
+		height:24px;
+	}
+	
+	dl#financebutton dd	{
+		margin-left:298px;
+		padding-top:6px;
+		padding-bottom:24px;
+		width:24px;
+		height:18px;
+	}
+	
+/* ファイナンスプランボタン */
+	#button_wp	{
+		margin-top:0px;
+	}
+	#button_swp, #button_std, #button_start, #button_als, #button_cls	{
+		margin-top:0px;
+	}
+	
+/* インフォメーションボタン */
+	#desc_wp, #desc_swp, #desc_std, #desc_start, #desc_als, #desc_cls	{
+		display:none;
+		position:absolute;
+		top:18px;
+		*top:20px;	/* IE用調整 */
+		left:346px;
+		*left:353px;	/* IE用調整 */
+	}
+
+	#inputarea	{
+		display:none;
+		position:absolute;
+		top:0px;
+		left:15px;
+		width:260px;
+		height:300px;
+	}
+
+	#outputarea 	{				
+		display:none;
+		position:absolute;
+		top:-15px;
+		left:290px;
+		*top:0px;	/* IE用調整 */
+		width:280px;
+		height:290px;
+		color:#000;
+		font-size:10pt;
+		
+	}	
+		
+	a	{
+		text-decoration:none;
+	}
+	
+ 	a:hover {
+	position:relative;
+	text-decoration:none;
+	}
+
+
+
+	.fptitle	{
+		padding:3px 5px;
+		color:#fff;
+		background-color:#039;
+		font-size:10pt;
+		font-weight:bold;
+		
+		width:240px;
+	}
+	
+	#backlink	{
+		position:absolute;
+		top:25px;
+		*top:11px;	/* IE用調整 */
+		left:137px; 
+		*left:140px;	/* IE用調整 */
+		font-size:9pt;
+		
+		color:gray;
+		text-decoration:none;
+	}
+	
+	#wpform	{
+		position:absolute;
+		top:24px;
+		left: 5px;
+		width: 245px;
+	}
+
+	#wpform2	{
+		position:absolute;
+		top:45px;	/* WP以外(残価入力欄なし)の場合の縦位置 */	
+		left: 5px;
+		width: 245px;
+	}
+
+		
+	dl#wpform dt,
+	dl#wpform dd {
+		font-size: 9pt;
+		
+		color: #555;
+		padding: 3px;
+	}
+
+	dl#wpform dt	{
+		clear: left;
+		float: left;
+		width: 120px;
+	}
+		
+	dl#wpform dd {
+		margin-left: 120px;
+		text-align:right;
+}
+	
+	dl#wpform2 dt,
+	dl#wpform2 dd {
+		font-size: 9pt;
+		
+		color: #555;
+		padding: 3px;
+	}
+
+	dl#wpform2 dt	{
+		clear: left;
+		float: left;
+		width: 120px;
+	}
+		
+	dl#wpform2 dd {
+		margin-left: 120px;
+		text-align:right;
+}
+
+	#kome{
+		position:relative;
+		top: 0px;
+		left: 10px;
+		font-size: 6pt;
+		color:#666;
+	}
+	
+	
+	.zankaminmax	{
+		position:absolute;
+		top:152px;
+		left:5px;
+		width:200px;
+		height:10px;
+		font-size:7.5pt;
+		font-color:#666;
+	}
+	
+	/* 入力欄テキストボックス内の文字を右寄せ */
+	#downpayment, #bonuspayment, #lastpayment, #sonota, .text	{
+		margin:0;
+		text-align:right;
+	}
+		
+	#errorarea	{
+		position:absolute;
+		top:184px;
+		left:3px;
+		width:145px;
+		font-size:7.5pt;
+		line-height:1.3;
+		color:#FF3300;
+		}
+	
+	#difference	{
+		color:#F60;
+		font-size:8pt;
+	}
+
+	#caption	{
+		color:#000;
+		font-size:7pt;
+	}
+
+	#smallcaption	{
+		color:#F60;
+		font-size:6pt;
+	}
+	
+	#zankaup	{
+		position:absolute;
+		top:160px;
+		left:150px;
+		width:40px;
+		height:24px;
+	}		
+	
+	#zankadown	{
+		position:absolute;
+		top:160px;
+		left:202px;
+		width:40px;
+		height:24px;
+	}
+	
+	/* iPhone / mobile webkit */
+	@media screen and (max-device-width: 480px) {
+  		#zankaup { top: 123px;  }
+		#zankadown { top: 123px;  }
+	}
+
+	/* iPad / mobile webkit */	
+	@media screen and (max-device-width: 1024px) {
+  		#zankaup { top: 123px;  }
+		#zankadown { top: 123px;  }
+		.zankaminmax	{ top: 170px;  }
+	 }
+
+	/* iPad3 / mobile webkit */	
+	@media screen and (max-device-width: 2048px) {
+  		#zankaup { top: 180px;  }
+		#zankadown { top: 180px;  }
+		.zankaminmax	{ top: 170px;  }
+	 }
+
+	head~/* */body #zankaup { /* for ie8 */ 
+			top: 180px;
+	}
+	head~/* */body #zankadown { /* for ie8 */ 
+			top: 180px;
+	}
+	head~/* */body .zankaminmax { /* for ie8 */ 
+			top: 170px;
+	}
+
+	
+/* フォームグラデーション、角丸、シャドウ */
+	.text, .dropdown{
+	    border:1px solid #777;
+	    padding: 1px 2px;
+	    color: #666;
+	    background: #fff;
+	    border-radius: 3px;
+			margin:0;
+     
+    /* Webkit */
+	    background: -webkit-gradient(
+    	linear,
+        left top,
+        left bottom,
+        from(#eee),
+        to(#fff)
+        );
+	    -webkit-border-radius: 3px;
+		-webkit-box-shadow: 1px 1px 1px #fff;
+		     
+    /* Firefox */
+    	background: -moz-linear-gradient(
+        top,
+        #eee,
+        #fff
+        );
+    	-moz-border-radius: 3px;
+     	-moz-box-shadow: 1px 1px 1px #fff;
+		
+    /* IE */	
+	    filter:progid:DXImageTransform.Microsoft.gradient
+        (startColorstr=#ffeeeeee,endColorstr=#ffffffff);
+	    zoom: 1;
+
+		/* default */
+			 background: linear-gradient(
+					to bottom,
+					#eee,
+					#fff
+					);
+
+		border-radius: 3px;//CSS3
+  	  	text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
+
+}
+
+
+/* サブミットボタン装飾 */
+    #ca_btn {
+		border:none;
+	 	background-color: white;
+		width: 100%;
+    	height: 100%;
+
+	}
+
+	#ca_btn:focus {
+       outline: 0;
+	}
+
+	#calc	{
+		position:absolute;
+		top:215px;
+		left:130px;
+	}
+	
+	#pdf	{
+		position:absolute;
+		top:240px;
+		left:5px;
+	}
+	
+	.submit{
+	    width:110px;
+		height:20px;
+		border:1px solid #CCC;
+	    padding: 1px 1px;
+	    color: #555;
+	    cursor: pointer;
+	    background: #eee;
+	    border-radius: 5px;
+     
+	/* Webkit */
+	    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#eeeeee),
+        to(#aaaaaa)
+        );
+	    -webkit-border-radius: 3px;
+ 	   -webkit-box-shadow: 1px 1px 1px #fff;
+         
+	/* Firefox */
+ 	   background: -moz-linear-gradient(
+        top,
+        #eeeeee,
+        #aaaaaa
+        );
+ 	   -moz-border-radius: 3px;
+ 	   -moz-box-shadow: 1px 1px 1px #fff;
+     
+	/* IE */
+ 	   filter:progid:DXImageTransform.Microsoft.gradient
+        (startColorstr=#eeeeee,endColorstr=#aaaaaa);
+ 	   zoom: 1;
+
+	/* default */
+		 background: linear-gradient(
+				to bottom,
+				#eeeeee,
+				#aaaaaa
+				);
+	}
+
+	.submitoff{
+	    width:110px;
+		height:20px;
+		border:1px solid #CCC;
+	    padding: 1px 1px;
+	    color: #aaa;
+	    cursor: pointer;
+	    background: #eee;
+	    border-radius: 5px;
+     
+	/* Webkit */
+	    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#eeeeee),
+        to(#aaaaaa)
+        );
+	    -webkit-border-radius: 3px;
+ 	   -webkit-box-shadow: 1px 1px 1px #fff;
+         
+	/* Firefox */
+ 	   background: -moz-linear-gradient(
+        top,
+        #eeeeee,
+        #dddddd
+        );
+ 	   -moz-border-radius: 3px;
+ 	   -moz-box-shadow: 1px 1px 1px #fff;
+     
+	/* IE */
+ 	   filter:progid:DXImageTransform.Microsoft.gradient
+        (startColorstr=#eeeeee,endColorstr=#aaaaaa);
+ 	   zoom: 1;
+
+	/* default */
+		 background: linear-gradient(
+				to bottom,
+				#eeeeee,
+				#dddddd
+				);
+	}
+
+		
+	#result	{
+	/*	position:absolute;
+		top:-300px;
+		left:0px;
+		width:280px; */
+	}
+	
+	dl#result dt	{
+		clear: left;
+		float: left;
+		width: 170px;
+		height: 20px;
+		line-height:20px;
+		font-size:8pt;
+		
+		color: #555;
+		padding: 1px 1px 1px 3px;
+		vertical-align:middle;
+	}
+	
+	dl#result dd	{
+		margin-left: 170px;
+		height: 20px;
+		line-height:20px;
+		text-align:right;
+		font-size:8pt;
+		
+		color: #555;
+		padding: 1px 3px 1px 1px;
+		vertical-align:middle;
+	}
+	
+	.mptitle	{
+		font-size:18pt;
+		font-family: "ヒラギノ明朝 Pro W6", "HiraMinProN-W6", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+		font-weight:bold;
+		color:#666;
+		padding: 2px 2px;
+	}
+
+	.monthlypayment	{
+		font-size:32pt;
+		font-family: "ヒラギノ明朝 Pro W6", "HiraMinProN-W6", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+		font-weight:bold;
+		color:#369;
+		padding: 2px 2px;
+	}
+	
+	dl#result dt.odd,
+	dl#result dd.odd {
+		background: #EEE;
+	}
+	
+/* POP画面 */
+	#popbanner	{
+		position:absolute;
+		top:0px;
+		left:2px;
+	}
+		#poptitle	{
+		position:absolute;
+		top:10px;
+		left:90px;
+		padding:1px 3px;
+		color:#424242;
+		background-color:#CECEF6;
+		font-size:18pt;
+		font-weight:bold;
+		font-family: "ヒラギノ明朝 Pro W6", "HiraMinProN-W6", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+	}
+	
+	#popperiod	{
+		position:absolute;
+		top:50px;
+		*top:45px;	/* IE用 */
+		left:95px;
+		*left:105px;	/* IE用 */
+		color:red;
+		font-size:8pt;
+		
+		-webkit-text-size-adjust: none; /* iPhoneでフォントサイズが自動調整される（大きくなる）のを防ぐ */
+	}
+
+	#popdesc1	{
+		position:absolute;
+		top:125px;
+		left:50px;
+		*left:60px;	/* IE用 */
+		font-size:10pt;
+		
+		-webkit-text-size-adjust: none; /* iPhoneでフォントサイズが自動調整される（大きくなる）のを防ぐ */
+	}
+	
+	#popmonthlybox	{
+		position:absolute;
+		top:125px;
+		left:340px;
+		width:300px;
+		height:60px;		
+	}
+		
+	#popmonthly1	{
+		position:absolute;
+		top:130px;
+		left:170px;
+	}
+	
+head~/* */body #popmonthly2	{ /* for ie8 */ 
+		position:relative;
+		top:0px;
+		left: 23px;
+		color:#0033CC;
+		font-size:14pt;
+		font-weight:bold;
+		font-family: "ヒラギノ明朝 Pro W6", "HiraMinProN-W6", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+	}
+
+html:not(:target) #popmonthly2	{ /* for others */ 
+		position:relative;
+		top:-4px;
+		left: 25px;
+		color:#0033CC;
+		font-size:14pt;
+		font-weight:bold;
+		font-family: "ヒラギノ明朝 Pro W6", "HiraMinProN-W6", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+	}
+		
+	#popmonthly3	{
+		position:absolute;
+		top:113px;
+		left:400px;		
+	}
+	
+	#popdesc2	{
+		position:absolute;
+		top:150px;
+		left:50px;
+		*left:60px;	/* IE用 */
+		font-size:10pt;
+		
+	}
+
+head~/* */body #poppayplan{ /* for ie8 */ 
+		position:absolute;
+		top:175px;
+		left:4px;
+		padding:4px;		
+		width:585px;
+		height:88px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+		line-height:1.4;
+}
+
+html:not(:target) #poppayplan{ /* for others */ 
+		position:absolute;
+		top:175px;
+		left:4px;		
+		width:585px;
+		height:88px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+*:first-child+html #poppayplan {  /* for ie7 */ 
+		position:absolute;
+		top:200px;
+		left:25px;
+		padding:4px;		
+		width:540px;
+		height:58px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+* html #poppayplan  {  /* for ie6 */ 
+		position:absolute;
+		top:165px;
+		left:25px;
+		padding:4px;		
+		width:540px;
+		height:78px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+head~/* */body #poppayplan2 { /* for ie8 */ 
+		position:absolute;
+		top:165px;
+		left:25px;
+		padding:4px;		
+		width:540px;
+		height:58px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+html:not(:target) #poppayplan2 { /* for others */ 
+		position:absolute;
+		top:175px;
+		left:4px;		
+		width:585px;
+		height:88px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+*:first-child+html #poppayplan2 {  /* for ie7 */ 
+		position:absolute;
+		top:200px;
+		left:25px;
+		padding:4px;		
+		width:540px;
+		height:58px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+* html #poppayplan2  {  /* for ie6 */ 
+		position:absolute;
+		top:165px;
+		left:25px;
+		padding:4px;		
+		width:540px;
+		height:78px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+head~/* */body #poppayplan3 { /* for ie8 */ 
+		position:absolute;
+		top:165px;
+		left:25px;
+		padding:4px;		
+		width:540px;
+		height:48px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+html:not(:target) #poppayplan3 { /* for others */ 
+		position:absolute;
+		top:175px;
+		left:4px;		
+		width:585px;
+		height:64px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+*:first-child+html #poppayplan3 {  /* for ie7 */ 
+		position:absolute;
+		top:200px;
+		left:25px;
+		padding:4px;		
+		width:540px;
+		height:58px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+* html #poppayplan3  {  /* for ie6 */ 
+		position:absolute;
+		top:165px;
+		left:25px;
+		padding:4px;		
+		width:540px;
+		height:78px;
+		border:solid;
+		border-width:1px;
+		border-color:#999999;
+		font-size:7.5pt;
+		
+}
+
+	#poplink1	{
+		position:absolute;
+		top:282px;
+		left:30px;		
+		font-size:10pt;
+		
+	}
+
+	#poplink2	{
+		position:absolute;
+		top:282px;
+		left:360px;		
+		font-size:10pt;
+		
+	}
+	
+	/* その他項目のポップアップ画面 */
+	#sonota_popup{
+	position: fixed;
+	left: 40px;
+	top: 10px;
+	z-index: 10;
+	margin: 0px;
+	padding: 5px;
+	width: 440px;
+	height: 280px;
+	font-size: 12px;
+	background: url(../img/description_se.gif) no-repeat;
+	}
+	
+	#sonota_popup dt:first-child{
+	color: #666666;	
+	margin: 15px 4px 0px 15px;
+	clear:left;
+	float:left;
+	}
+
+	#sonota_popup dt{
+	color: #666666;	
+	margin: 8px 4px 0 15px;
+	clear:both;
+	float:left;
+	}
+
+	#sonota_popup dd:first-child{
+	color: #666666;
+	margin: 15px 90px 0px 0px;
+	}
+
+	#sonota_popup dd{
+	color: #666666;
+	margin: 7px 90px 0px 0px;
+	float:right;
+	}
+	#sonota_popup > dd{
+	float:right;
+	}
+
+
+	/* その他項目内訳 テキストボックス */
+	#dealeroption, #dealeraccessories, #mmmaintenance, #mmsupport, #salesexpenses, #discount, #mbinsureance	{
+	text-align: right;
+	}
+	
+	/* その他項目閉じるボタン */
+	#sonota_popup_close{
+	margin: 0px;
+	padding: 0px;
+	height: 20px;
+	width: 20px;
+	z-index: 12;
+	position: absolute;
+	top: 8px;
+	left: 412px;
+	}
+	
+	#sonota_total	{
+	color: #666666;
+	font-size: 14px;
+	font-weight: bold;
+	position:absolute;
+	left: 260px;
+	top: 248px;
+	}
+	
+	#sonota_popup_ok	{
+	position:absolute;
+	left: 20px;
+	top: 248px;
+	}
+		
+	#sonota_popup_reset	{
+	position:absolute;
+	left: 110px;
+	top: 248px;
+	}
+	
+	/* FAX送信のポップアップ画面 */
+	#fax_popup{
+	position: fixed;
+	left: 270px;
+	top: 50px;
+	z-index: 10;
+	background-color: #CCCCCC;
+	margin: 0px;
+	padding: 5px;
+	height: 250px;
+	width: 250px;
+	font-size: 12px;
+	}
+	/* セールスマンモード突入用クリックエリア（１回目） */
+	#salesmanarea1{
+	background-color: #FFFFFF; /* 白に変更 */
+	height: 50px;
+	width: 60px;
+	left: 10px;
+	top: 240px;
+	position: fixed;
+	}
+	/* セールスマンモード突入用クリックエリア（２回目 他ブラウザは1回目のすぐ右） */
+	#salesmanarea2{
+	background-color: #FFFFFF; /* 白に変更 */
+	height: 50px;
+	width: 90px;
+	left:75px;
+	top: 240px;
+	position: fixed;
+	}
+
+	/* セールスマンモード突入用クリックエリア（２回目 iPadはiボタンの下） */
+	@media screen and (max-device-width: 1024px) {
+	 #salesmanarea2{
+	background-color: #FFFFFF; /* 白に変更 */
+	height: 50px;
+	width: 60px;
+	left:285px;
+	top: 240px;
+	position: fixed;
+	}
+	}
+		
+	/* ログインフォームは、ポップアップに見せかける */
+	#loginback{
+	margin: 0px;
+	padding: 0px;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	}
+	
+	#loginform{
+	position: fixed;
+	left: 180px;
+	top: 60px;	
+	
+	line-height:1.6;
+	}
+
+	#loginform #username{
+	width:140px;
+	}
+	#loginform #password{
+	width:140px;
+	}
+	#loginform .login-term{
+	display:inline-block;
+	width:95px;
+	}
+	
+	#logout{
+	font-size: 10px;
+	color: #666666;
+	position: absolute;
+	left: 530px;
+	top: 286px;
+	}
+	
+	#quickchart{
+	font-size: 10px;
+	color: #FFFF00;
+	position: absolute;
+	left: 170px;
+	top: 7px;
+	}
+	
+	/* エラー画面の技術情報 */
+	#t-info{
+	font-size: 9px;
+	}
+	
+	/****************************************/
+	/* 支払条件比較画面用 hikaku: by morita */
+	/****************************************/
+	#leftarea {
+	margin: 0px;
+	padding: 4px;
+	height: 600px;
+	width: 300px;
+	float: left;
+	border: 1px solid #999999;
+	}
+	
+	
+	#centerarea {
+	margin: 0px;
+	padding: 4px;
+	height: 600px;
+	width: 300px;
+	float: left;
+	border: 1px solid #999999;
+	}
+	
+	#rightarea {
+	margin: 0px;
+	padding: 4px;
+	height: 600px;
+	width: 300px;
+	float: left;
+	border: 1px solid #999999;
+	}
+	
+	/* 比較見積もりボタン */
+	#compare	{
+	position:absolute;
+	top:240px;
+	left:130px;
+	}
+	
+	
+	#leftresult	{
+	/*	position:absolute;
+		top:-300px;
+		left:0px;
+		width:280px; */
+	}
+	
+	dl.compare1{
+	margin-top:10px;
+	}
+
+	dl.compare1 dt	{
+	position:relative;
+	top:0px;
+	clear: left;
+	float: left;
+	width: 168px;
+	height: 26px;
+	line-height:26px;
+	font-size:8pt;
+	
+	color: #555;
+	vertical-align:middle;
+	border: 1px solid #333333;
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+	}
+	
+	dl.compare1 dd	{
+	margin-left: 175px;
+	height: 26px;
+	line-height:26px;
+	text-align:right;
+	font-size:8pt;
+	
+	color: #555;
+	padding: 1px 5px 1px 1px;
+	border: 1px solid #333333;
+	}
+	
+	dl.compare2 dt	{
+	clear: left;
+	float: left;
+	width: 168px;
+	height: 22px;
+	line-height:22px;
+	font-size:8pt;
+	
+	color: #555;
+	padding: 1px 1px 1px 5px;
+	vertical-align:middle;
+	border: 1px solid #333333;
+	background-color: #DDDDDD;
+	}
+	
+	dl.compare2 dd	{
+	margin-left: 175px;
+	height: 22px;
+	line-height:22px;
+	text-align:right;
+	font-size:8pt;
+	
+	color: #555;
+	padding: 1px 5px 1px 1px;
+	vertical-align:middle;
+	border: 1px solid #333333;
+	}
+
+	.mptitle2	{
+		font-size:18pt;
+		font-family: "ヒラギノ明朝 Pro W6", "HiraMinProN-W6", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+		font-weight:bold;
+		color:#666;
+		padding: 2px 2px;
+		}
+	
+	.monthlypayment2	{
+	display:inline-block;
+	font-size:20pt;
+	font-family: "ヒラギノ明朝 Pro W6", "HiraMinProN-W6", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+	font-weight:bold;
+	color:#000;
+	padding: 5px 2px 2px;
+	line-height: 34px;
+	vertical-align: top;
+	height: 34px;
+	}
+	
+	// for Chrome 月額ズレ対応
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.monthlypayment2	{
+	font-size:20pt;
+	font-family: "ヒラギノ明朝 Pro W6", "HiraMinProN-W6", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+	font-weight:bold;
+	color:#000;
+	padding: 2px;
+	line-height: 34px;
+	vertical-align: middle;
+	height: 34px;
+	position:absolute;
+	top:97px;
+	left:80px;
+	}
+  }
+
+	.title{
+	font-size: 10px;
+	height: 40px;
+	color: #999999;
+	margin:0 0 5px;
+	}
+	
+	.title h2{
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: bold;
+	height: 14px;
+	color: #000000;
+	margin:12px 0;
+	}
+
+	.calcmemo	{
+		font-size:8pt;
+		color:#222;
+		padding: 1px 1px;
+		position:absolute;
+		top:575px;
+		}
+	
+	.submit2{
+	width:210px;
+	height:30px;
+	border:1px solid #03C;
+	padding: 1px;
+	color: #FFF;
+	cursor: pointer;
+	background: #eee;
+	border-radius: 5px;
+	/* Webkit */
+	    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#03C),
+        to(#009)
+        );
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: 1px 1px 1px #fff;
+	/* Firefox */
+ 	   background: -moz-linear-gradient(
+        top,
+        #03C,
+        #009
+        );
+	-moz-border-radius: 3px;
+	-moz-box-shadow: 1px 1px 1px #fff;
+     
+	/* IE */
+ 	   filter:progid:DXImageTransform.Microsoft.gradient
+        (startColorstr=#03C,endColorstr=#009);
+	zoom: 1;
+
+	/* default */
+		 background: linear-gradient(
+				to bottom,
+				#03C,
+				#009
+				);
+
+	position: absolute;
+	top: 580px;
+	left: 14px;
+	}
+
+	/* 比較画面の計算ボタン*/	
+	.submit3{
+	    width:110px;
+		height:20px;
+		border:1px solid #03C;
+	    padding: 1px 1px;
+	    color: #FFF;
+	    cursor: pointer;
+	    background: #eee;
+	    border-radius: 5px;
+     
+	/* Webkit */
+	    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#03C),
+        to(#009)
+        );
+	    -webkit-border-radius: 3px;
+ 	   -webkit-box-shadow: 1px 1px 1px #fff;
+         
+	/* Firefox */
+ 	   background: -moz-linear-gradient(
+        top,
+        #03C,
+        #009
+        );
+ 	   -moz-border-radius: 3px;
+ 	   -moz-box-shadow: 1px 1px 1px #fff;
+     
+	/* IE */
+ 	   filter:progid:DXImageTransform.Microsoft.gradient
+        (startColorstr=#03C,endColorstr=#009);
+ 	   zoom: 1;
+
+	/* default */
+ 	   background: linear-gradient(
+        to bottom,
+        #03C,
+        #009
+        );
+	}
+
+     
+
+	
+	.message{
+	font-size: 10px;
+	font-weight: bold;
+	color: #FF0000;
+	padding-left: 135px;
+	margin-top:-20px;
+	}
+	
+	
+	/* 比較画面の残価範囲表示 */
+	.zankaminmax1{
+	font-size: 10px;	
+	}
+	
+	.zankaminmax2{
+	font-size: 10px;	
+	}
+
+	.zankaminmax3{
+	font-size: 10px;	
+	}
+
+/* by morita 消費税注意書き 2014.01.06 */
+	#tax{
+	font-size: 8px;
+	color:#FF3300;
+	position: absolute;
+	left: 0px;
+	top: 274px;
+	}
